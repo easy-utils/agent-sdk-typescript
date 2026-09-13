@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.14.1",
-    "@easy-utils/easy-rpc": "github:easy-utils/easy-rpc-ts#v0.2.1"
+    "@easy-utils/easy-rpc": "github:easy-utils/easy-rpc-ts#v0.2.3"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
