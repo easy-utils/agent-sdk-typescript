@@ -57,402 +57,402 @@ export const methodSpecs: MethodSpec[] = [
 ]
 
 export interface AgentServiceClient {
-  health(req: HealthRequest, kind?: ContentKind, metadata?: Headers): Promise<HealthResponse>
-  listSessions(req: ListSessionsRequest, kind?: ContentKind, metadata?: Headers): Promise<ListSessionsResponse>
-  createSession(req: CreateSessionRequest, kind?: ContentKind, metadata?: Headers): Promise<CreateSessionResponse>
-  getSession(req: GetSessionRequest, kind?: ContentKind, metadata?: Headers): Promise<GetSessionResponse>
-  deleteSession(req: DeleteSessionRequest, kind?: ContentKind, metadata?: Headers): Promise<DeleteSessionResponse>
-  listMessages(req: ListMessagesRequest, kind?: ContentKind, metadata?: Headers): Promise<ListMessagesResponse>
-  prompt(req: PromptRequest, kind?: ContentKind, metadata?: Headers): Promise<AsyncIterable<PromptResponse>>
-  watchSession(req: WatchSessionRequest, kind?: ContentKind, metadata?: Headers): Promise<AsyncIterable<WatchSessionResponse>>
-  watchSessions(req: WatchSessionsRequest, kind?: ContentKind, metadata?: Headers): Promise<AsyncIterable<WatchSessionsResponse>>
-  fork(req: ForkRequest, kind?: ContentKind, metadata?: Headers): Promise<ForkResponse>
-  rename(req: RenameRequest, kind?: ContentKind, metadata?: Headers): Promise<RenameResponse>
-  setModel(req: SetModelRequest, kind?: ContentKind, metadata?: Headers): Promise<SetModelResponse>
-  undo(req: UndoRequest, kind?: ContentKind, metadata?: Headers): Promise<UndoResponse>
-  state(req: StateRequest, kind?: ContentKind, metadata?: Headers): Promise<StateResponse>
-  mailbox(req: MailboxRequest, kind?: ContentKind, metadata?: Headers): Promise<MailboxResponse>
-  updateSettings(req: UpdateSettingsRequest, kind?: ContentKind, metadata?: Headers): Promise<UpdateSettingsResponse>
-  interrupt(req: InterruptRequest, kind?: ContentKind, metadata?: Headers): Promise<InterruptResponse>
-  compact(req: CompactRequest, kind?: ContentKind, metadata?: Headers): Promise<CompactResponse>
-  listProviders(req: ListProvidersRequest, kind?: ContentKind, metadata?: Headers): Promise<ListProvidersResponse>
-  listProvidersCatalog(req: ListProvidersCatalogRequest, kind?: ContentKind, metadata?: Headers): Promise<ListProvidersCatalogResponse>
-  registerProvider(req: RegisterProviderRequest, kind?: ContentKind, metadata?: Headers): Promise<RegisterProviderResponse>
-  discoverGatewayModels(req: DiscoverGatewayModelsRequest, kind?: ContentKind, metadata?: Headers): Promise<DiscoverGatewayModelsResponse>
-  deleteProvider(req: DeleteProviderRequest, kind?: ContentKind, metadata?: Headers): Promise<DeleteProviderResponse>
-  testProvider(req: TestProviderRequest, kind?: ContentKind, metadata?: Headers): Promise<TestProviderResponse>
-  listModels(req: ListModelsRequest, kind?: ContentKind, metadata?: Headers): Promise<ListModelsResponse>
-  listPresets(req: ListPresetsRequest, kind?: ContentKind, metadata?: Headers): Promise<ListPresetsResponse>
-  upsertPreset(req: UpsertPresetRequest, kind?: ContentKind, metadata?: Headers): Promise<UpsertPresetResponse>
-  deletePreset(req: DeletePresetRequest, kind?: ContentKind, metadata?: Headers): Promise<DeletePresetResponse>
-  previewPreset(req: PreviewPresetRequest, kind?: ContentKind, metadata?: Headers): Promise<PreviewPresetResponse>
-  getConfig(req: GetConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<GetConfigResponse>
-  setConfig(req: SetConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<SetConfigResponse>
-  listTools(req: ListToolsRequest, kind?: ContentKind, metadata?: Headers): Promise<ListToolsResponse>
-  getToolConfig(req: GetToolConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<GetToolConfigResponse>
-  setToolConfig(req: SetToolConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<SetToolConfigResponse>
-  setExtensionConfig(req: SetExtensionConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<SetExtensionConfigResponse>
-  uploadFile(req: UploadFileRequest, kind?: ContentKind, metadata?: Headers): Promise<UploadFileResponse>
-  ingestFile(req: IngestFileRequest, kind?: ContentKind, metadata?: Headers): Promise<IngestFileResponse>
-  getFile(req: GetFileRequest, kind?: ContentKind, metadata?: Headers): Promise<GetFileResponse>
-  getFileMeta(req: GetFileMetaRequest, kind?: ContentKind, metadata?: Headers): Promise<GetFileMetaResponse>
-  getAgentConfig(req: GetAgentConfigRequest, kind?: ContentKind, metadata?: Headers): Promise<GetAgentConfigResponse>
+  health(req: HealthRequest, kind?: ContentKind): Promise<HealthResponse>
+  listSessions(req: ListSessionsRequest, kind?: ContentKind): Promise<ListSessionsResponse>
+  createSession(req: CreateSessionRequest, kind?: ContentKind): Promise<CreateSessionResponse>
+  getSession(req: GetSessionRequest, kind?: ContentKind): Promise<GetSessionResponse>
+  deleteSession(req: DeleteSessionRequest, kind?: ContentKind): Promise<DeleteSessionResponse>
+  listMessages(req: ListMessagesRequest, kind?: ContentKind): Promise<ListMessagesResponse>
+  prompt(req: PromptRequest, kind?: ContentKind): Promise<AsyncIterable<PromptResponse>>
+  watchSession(req: WatchSessionRequest, kind?: ContentKind): Promise<AsyncIterable<WatchSessionResponse>>
+  watchSessions(req: WatchSessionsRequest, kind?: ContentKind): Promise<AsyncIterable<WatchSessionsResponse>>
+  fork(req: ForkRequest, kind?: ContentKind): Promise<ForkResponse>
+  rename(req: RenameRequest, kind?: ContentKind): Promise<RenameResponse>
+  setModel(req: SetModelRequest, kind?: ContentKind): Promise<SetModelResponse>
+  undo(req: UndoRequest, kind?: ContentKind): Promise<UndoResponse>
+  state(req: StateRequest, kind?: ContentKind): Promise<StateResponse>
+  mailbox(req: MailboxRequest, kind?: ContentKind): Promise<MailboxResponse>
+  updateSettings(req: UpdateSettingsRequest, kind?: ContentKind): Promise<UpdateSettingsResponse>
+  interrupt(req: InterruptRequest, kind?: ContentKind): Promise<InterruptResponse>
+  compact(req: CompactRequest, kind?: ContentKind): Promise<CompactResponse>
+  listProviders(req: ListProvidersRequest, kind?: ContentKind): Promise<ListProvidersResponse>
+  listProvidersCatalog(req: ListProvidersCatalogRequest, kind?: ContentKind): Promise<ListProvidersCatalogResponse>
+  registerProvider(req: RegisterProviderRequest, kind?: ContentKind): Promise<RegisterProviderResponse>
+  discoverGatewayModels(req: DiscoverGatewayModelsRequest, kind?: ContentKind): Promise<DiscoverGatewayModelsResponse>
+  deleteProvider(req: DeleteProviderRequest, kind?: ContentKind): Promise<DeleteProviderResponse>
+  testProvider(req: TestProviderRequest, kind?: ContentKind): Promise<TestProviderResponse>
+  listModels(req: ListModelsRequest, kind?: ContentKind): Promise<ListModelsResponse>
+  listPresets(req: ListPresetsRequest, kind?: ContentKind): Promise<ListPresetsResponse>
+  upsertPreset(req: UpsertPresetRequest, kind?: ContentKind): Promise<UpsertPresetResponse>
+  deletePreset(req: DeletePresetRequest, kind?: ContentKind): Promise<DeletePresetResponse>
+  previewPreset(req: PreviewPresetRequest, kind?: ContentKind): Promise<PreviewPresetResponse>
+  getConfig(req: GetConfigRequest, kind?: ContentKind): Promise<GetConfigResponse>
+  setConfig(req: SetConfigRequest, kind?: ContentKind): Promise<SetConfigResponse>
+  listTools(req: ListToolsRequest, kind?: ContentKind): Promise<ListToolsResponse>
+  getToolConfig(req: GetToolConfigRequest, kind?: ContentKind): Promise<GetToolConfigResponse>
+  setToolConfig(req: SetToolConfigRequest, kind?: ContentKind): Promise<SetToolConfigResponse>
+  setExtensionConfig(req: SetExtensionConfigRequest, kind?: ContentKind): Promise<SetExtensionConfigResponse>
+  uploadFile(req: UploadFileRequest, kind?: ContentKind): Promise<UploadFileResponse>
+  ingestFile(req: IngestFileRequest, kind?: ContentKind): Promise<IngestFileResponse>
+  getFile(req: GetFileRequest, kind?: ContentKind): Promise<GetFileResponse>
+  getFileMeta(req: GetFileMetaRequest, kind?: ContentKind): Promise<GetFileMetaResponse>
+  getAgentConfig(req: GetAgentConfigRequest, kind?: ContentKind): Promise<GetAgentConfigResponse>
 }
 export function createAgentServiceClient(transport: Transport, defaultKind: ContentKind = 'proto'): AgentServiceClient {
   return {
-    async health(req, kind = defaultKind, metadata?: Headers) {
+    async health(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Health"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(HealthRequestSchema, req)) : toBinary(HealthRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(HealthResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(HealthResponseSchema, res.body)
     },
-    async listSessions(req, kind = defaultKind, metadata?: Headers) {
+    async listSessions(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListSessions"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListSessionsRequestSchema, req)) : toBinary(ListSessionsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListSessionsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListSessionsResponseSchema, res.body)
     },
-    async createSession(req, kind = defaultKind, metadata?: Headers) {
+    async createSession(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/CreateSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateSessionRequestSchema, req)) : toBinary(CreateSessionRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(CreateSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateSessionResponseSchema, res.body)
     },
-    async getSession(req, kind = defaultKind, metadata?: Headers) {
+    async getSession(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetSessionRequestSchema, req)) : toBinary(GetSessionRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetSessionResponseSchema, res.body)
     },
-    async deleteSession(req, kind = defaultKind, metadata?: Headers) {
+    async deleteSession(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/DeleteSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteSessionRequestSchema, req)) : toBinary(DeleteSessionRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteSessionResponseSchema, res.body)
     },
-    async listMessages(req, kind = defaultKind, metadata?: Headers) {
+    async listMessages(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListMessages"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListMessagesRequestSchema, req)) : toBinary(ListMessagesRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListMessagesResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListMessagesResponseSchema, res.body)
     },
-    async prompt(req, kind = defaultKind, metadata?: Headers) {
+    async prompt(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Prompt"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(PromptRequestSchema, req)) : toBinary(PromptRequestSchema, req) })
       return (async function* (): AsyncIterable<PromptResponse> { for await (const chunk of stream) { yield isJson ? fromJson(PromptResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PromptResponseSchema, chunk) } })()
     },
-    async watchSession(req, kind = defaultKind, metadata?: Headers) {
+    async watchSession(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/WatchSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionRequestSchema, req)) : toBinary(WatchSessionRequestSchema, req) })
       return (async function* (): AsyncIterable<WatchSessionResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionResponseSchema, chunk) } })()
     },
-    async watchSessions(req, kind = defaultKind, metadata?: Headers) {
+    async watchSessions(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/WatchSessions"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionsRequestSchema, req)) : toBinary(WatchSessionsRequestSchema, req) })
       return (async function* (): AsyncIterable<WatchSessionsResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionsResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionsResponseSchema, chunk) } })()
     },
-    async fork(req, kind = defaultKind, metadata?: Headers) {
+    async fork(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Fork"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ForkRequestSchema, req)) : toBinary(ForkRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ForkResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ForkResponseSchema, res.body)
     },
-    async rename(req, kind = defaultKind, metadata?: Headers) {
+    async rename(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Rename"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RenameRequestSchema, req)) : toBinary(RenameRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(RenameResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RenameResponseSchema, res.body)
     },
-    async setModel(req, kind = defaultKind, metadata?: Headers) {
+    async setModel(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/SetModel"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetModelRequestSchema, req)) : toBinary(SetModelRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(SetModelResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetModelResponseSchema, res.body)
     },
-    async undo(req, kind = defaultKind, metadata?: Headers) {
+    async undo(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Undo"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UndoRequestSchema, req)) : toBinary(UndoRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(UndoResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UndoResponseSchema, res.body)
     },
-    async state(req, kind = defaultKind, metadata?: Headers) {
+    async state(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/State"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(StateRequestSchema, req)) : toBinary(StateRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(StateResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(StateResponseSchema, res.body)
     },
-    async mailbox(req, kind = defaultKind, metadata?: Headers) {
+    async mailbox(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Mailbox"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(MailboxRequestSchema, req)) : toBinary(MailboxRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(MailboxResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(MailboxResponseSchema, res.body)
     },
-    async updateSettings(req, kind = defaultKind, metadata?: Headers) {
+    async updateSettings(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/UpdateSettings"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateSettingsRequestSchema, req)) : toBinary(UpdateSettingsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateSettingsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateSettingsResponseSchema, res.body)
     },
-    async interrupt(req, kind = defaultKind, metadata?: Headers) {
+    async interrupt(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Interrupt"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(InterruptRequestSchema, req)) : toBinary(InterruptRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(InterruptResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(InterruptResponseSchema, res.body)
     },
-    async compact(req, kind = defaultKind, metadata?: Headers) {
+    async compact(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/Compact"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CompactRequestSchema, req)) : toBinary(CompactRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(CompactResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CompactResponseSchema, res.body)
     },
-    async listProviders(req, kind = defaultKind, metadata?: Headers) {
+    async listProviders(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListProviders"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersRequestSchema, req)) : toBinary(ListProvidersRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersResponseSchema, res.body)
     },
-    async listProvidersCatalog(req, kind = defaultKind, metadata?: Headers) {
+    async listProvidersCatalog(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListProvidersCatalog"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersCatalogRequestSchema, req)) : toBinary(ListProvidersCatalogRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersCatalogResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersCatalogResponseSchema, res.body)
     },
-    async registerProvider(req, kind = defaultKind, metadata?: Headers) {
+    async registerProvider(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/RegisterProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RegisterProviderRequestSchema, req)) : toBinary(RegisterProviderRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(RegisterProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RegisterProviderResponseSchema, res.body)
     },
-    async discoverGatewayModels(req, kind = defaultKind, metadata?: Headers) {
+    async discoverGatewayModels(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/DiscoverGatewayModels"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DiscoverGatewayModelsRequestSchema, req)) : toBinary(DiscoverGatewayModelsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(DiscoverGatewayModelsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DiscoverGatewayModelsResponseSchema, res.body)
     },
-    async deleteProvider(req, kind = defaultKind, metadata?: Headers) {
+    async deleteProvider(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/DeleteProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteProviderRequestSchema, req)) : toBinary(DeleteProviderRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteProviderResponseSchema, res.body)
     },
-    async testProvider(req, kind = defaultKind, metadata?: Headers) {
+    async testProvider(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/TestProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(TestProviderRequestSchema, req)) : toBinary(TestProviderRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(TestProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(TestProviderResponseSchema, res.body)
     },
-    async listModels(req, kind = defaultKind, metadata?: Headers) {
+    async listModels(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListModels"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListModelsRequestSchema, req)) : toBinary(ListModelsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListModelsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListModelsResponseSchema, res.body)
     },
-    async listPresets(req, kind = defaultKind, metadata?: Headers) {
+    async listPresets(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListPresets"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListPresetsRequestSchema, req)) : toBinary(ListPresetsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListPresetsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListPresetsResponseSchema, res.body)
     },
-    async upsertPreset(req, kind = defaultKind, metadata?: Headers) {
+    async upsertPreset(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/UpsertPreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpsertPresetRequestSchema, req)) : toBinary(UpsertPresetRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(UpsertPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpsertPresetResponseSchema, res.body)
     },
-    async deletePreset(req, kind = defaultKind, metadata?: Headers) {
+    async deletePreset(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/DeletePreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeletePresetRequestSchema, req)) : toBinary(DeletePresetRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(DeletePresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeletePresetResponseSchema, res.body)
     },
-    async previewPreset(req, kind = defaultKind, metadata?: Headers) {
+    async previewPreset(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/PreviewPreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(PreviewPresetRequestSchema, req)) : toBinary(PreviewPresetRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(PreviewPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PreviewPresetResponseSchema, res.body)
     },
-    async getConfig(req, kind = defaultKind, metadata?: Headers) {
+    async getConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetConfigRequestSchema, req)) : toBinary(GetConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetConfigResponseSchema, res.body)
     },
-    async setConfig(req, kind = defaultKind, metadata?: Headers) {
+    async setConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/SetConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetConfigRequestSchema, req)) : toBinary(SetConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(SetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetConfigResponseSchema, res.body)
     },
-    async listTools(req, kind = defaultKind, metadata?: Headers) {
+    async listTools(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/ListTools"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListToolsRequestSchema, req)) : toBinary(ListToolsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListToolsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListToolsResponseSchema, res.body)
     },
-    async getToolConfig(req, kind = defaultKind, metadata?: Headers) {
+    async getToolConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetToolConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetToolConfigRequestSchema, req)) : toBinary(GetToolConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetToolConfigResponseSchema, res.body)
     },
-    async setToolConfig(req, kind = defaultKind, metadata?: Headers) {
+    async setToolConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/SetToolConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetToolConfigRequestSchema, req)) : toBinary(SetToolConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(SetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetToolConfigResponseSchema, res.body)
     },
-    async setExtensionConfig(req, kind = defaultKind, metadata?: Headers) {
+    async setExtensionConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/SetExtensionConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetExtensionConfigRequestSchema, req)) : toBinary(SetExtensionConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(SetExtensionConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetExtensionConfigResponseSchema, res.body)
     },
-    async uploadFile(req, kind = defaultKind, metadata?: Headers) {
+    async uploadFile(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/UploadFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UploadFileRequestSchema, req)) : toBinary(UploadFileRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(UploadFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UploadFileResponseSchema, res.body)
     },
-    async ingestFile(req, kind = defaultKind, metadata?: Headers) {
+    async ingestFile(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/IngestFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IngestFileRequestSchema, req)) : toBinary(IngestFileRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(IngestFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IngestFileResponseSchema, res.body)
     },
-    async getFile(req, kind = defaultKind, metadata?: Headers) {
+    async getFile(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileRequestSchema, req)) : toBinary(GetFileRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileResponseSchema, res.body)
     },
-    async getFileMeta(req, kind = defaultKind, metadata?: Headers) {
+    async getFileMeta(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetFileMeta"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileMetaRequestSchema, req)) : toBinary(GetFileMetaRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileMetaResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileMetaResponseSchema, res.body)
     },
-    async getAgentConfig(req, kind = defaultKind, metadata?: Headers) {
+    async getAgentConfig(req, kind = defaultKind) {
       const url = "/agent.v1.AgentService/GetAgentConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetAgentConfigRequestSchema, req)) : toBinary(GetAgentConfigRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(GetAgentConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetAgentConfigResponseSchema, res.body)
@@ -710,85 +710,85 @@ export function AgentServiceHandlers(impl: AgentServiceServiceImpl): ServiceHand
 }
 
 export interface AdminServiceClient {
-  listTenants(req: ListTenantsRequest, kind?: ContentKind, metadata?: Headers): Promise<ListTenantsResponse>
-  createTenant(req: CreateTenantRequest, kind?: ContentKind, metadata?: Headers): Promise<CreateTenantResponse>
-  updateTenant(req: UpdateTenantRequest, kind?: ContentKind, metadata?: Headers): Promise<UpdateTenantResponse>
-  deleteTenant(req: DeleteTenantRequest, kind?: ContentKind, metadata?: Headers): Promise<DeleteTenantResponse>
-  issueTenantToken(req: IssueTenantTokenRequest, kind?: ContentKind, metadata?: Headers): Promise<IssueTenantTokenResponse>
-  listTenantTokens(req: ListTenantTokensRequest, kind?: ContentKind, metadata?: Headers): Promise<ListTenantTokensResponse>
-  revokeTenantToken(req: RevokeTenantTokenRequest, kind?: ContentKind, metadata?: Headers): Promise<RevokeTenantTokenResponse>
-  rotateTenantToken(req: RotateTenantTokenRequest, kind?: ContentKind, metadata?: Headers): Promise<RotateTenantTokenResponse>
+  listTenants(req: ListTenantsRequest, kind?: ContentKind): Promise<ListTenantsResponse>
+  createTenant(req: CreateTenantRequest, kind?: ContentKind): Promise<CreateTenantResponse>
+  updateTenant(req: UpdateTenantRequest, kind?: ContentKind): Promise<UpdateTenantResponse>
+  deleteTenant(req: DeleteTenantRequest, kind?: ContentKind): Promise<DeleteTenantResponse>
+  issueTenantToken(req: IssueTenantTokenRequest, kind?: ContentKind): Promise<IssueTenantTokenResponse>
+  listTenantTokens(req: ListTenantTokensRequest, kind?: ContentKind): Promise<ListTenantTokensResponse>
+  revokeTenantToken(req: RevokeTenantTokenRequest, kind?: ContentKind): Promise<RevokeTenantTokenResponse>
+  rotateTenantToken(req: RotateTenantTokenRequest, kind?: ContentKind): Promise<RotateTenantTokenResponse>
 }
 export function createAdminServiceClient(transport: Transport, defaultKind: ContentKind = 'proto'): AdminServiceClient {
   return {
-    async listTenants(req, kind = defaultKind, metadata?: Headers) {
+    async listTenants(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/ListTenants"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantsRequestSchema, req)) : toBinary(ListTenantsRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantsResponseSchema, res.body)
     },
-    async createTenant(req, kind = defaultKind, metadata?: Headers) {
+    async createTenant(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/CreateTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateTenantRequestSchema, req)) : toBinary(CreateTenantRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(CreateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateTenantResponseSchema, res.body)
     },
-    async updateTenant(req, kind = defaultKind, metadata?: Headers) {
+    async updateTenant(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/UpdateTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateTenantRequestSchema, req)) : toBinary(UpdateTenantRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateTenantResponseSchema, res.body)
     },
-    async deleteTenant(req, kind = defaultKind, metadata?: Headers) {
+    async deleteTenant(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/DeleteTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteTenantRequestSchema, req)) : toBinary(DeleteTenantRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteTenantResponseSchema, res.body)
     },
-    async issueTenantToken(req, kind = defaultKind, metadata?: Headers) {
+    async issueTenantToken(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/IssueTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IssueTenantTokenRequestSchema, req)) : toBinary(IssueTenantTokenRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(IssueTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IssueTenantTokenResponseSchema, res.body)
     },
-    async listTenantTokens(req, kind = defaultKind, metadata?: Headers) {
+    async listTenantTokens(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/ListTenantTokens"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantTokensRequestSchema, req)) : toBinary(ListTenantTokensRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantTokensResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantTokensResponseSchema, res.body)
     },
-    async revokeTenantToken(req, kind = defaultKind, metadata?: Headers) {
+    async revokeTenantToken(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/RevokeTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RevokeTenantTokenRequestSchema, req)) : toBinary(RevokeTenantTokenRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(RevokeTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RevokeTenantTokenResponseSchema, res.body)
     },
-    async rotateTenantToken(req, kind = defaultKind, metadata?: Headers) {
+    async rotateTenantToken(req, kind = defaultKind) {
       const url = "/agent.v1.AdminService/RotateTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
-      const md = { ...(metadata ?? {}), 'content-type': [ct], accept: [ct] }
+      const md = { 'content-type': [ct], accept: [ct] }
       const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RotateTenantTokenRequestSchema, req)) : toBinary(RotateTenantTokenRequestSchema, req) })
       if (res.error) throw res.error
       return isJson ? fromJson(RotateTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RotateTenantTokenResponseSchema, res.body)
