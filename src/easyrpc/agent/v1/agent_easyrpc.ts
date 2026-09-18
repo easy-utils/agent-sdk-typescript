@@ -57,49 +57,50 @@ export const methodSpecs: MethodSpec[] = [
 ]
 
 export interface AgentServiceClient {
-  health(req: HealthRequest, kind?: ContentKind): Promise<HealthResponse>
-  listSessions(req: ListSessionsRequest, kind?: ContentKind): Promise<ListSessionsResponse>
-  createSession(req: CreateSessionRequest, kind?: ContentKind): Promise<CreateSessionResponse>
-  getSession(req: GetSessionRequest, kind?: ContentKind): Promise<GetSessionResponse>
-  deleteSession(req: DeleteSessionRequest, kind?: ContentKind): Promise<DeleteSessionResponse>
-  listMessages(req: ListMessagesRequest, kind?: ContentKind): Promise<ListMessagesResponse>
-  prompt(req: PromptRequest, kind?: ContentKind): Promise<AsyncIterable<PromptResponse>>
-  watchSession(req: WatchSessionRequest, kind?: ContentKind): Promise<AsyncIterable<WatchSessionResponse>>
-  watchSessions(req: WatchSessionsRequest, kind?: ContentKind): Promise<AsyncIterable<WatchSessionsResponse>>
-  fork(req: ForkRequest, kind?: ContentKind): Promise<ForkResponse>
-  rename(req: RenameRequest, kind?: ContentKind): Promise<RenameResponse>
-  setModel(req: SetModelRequest, kind?: ContentKind): Promise<SetModelResponse>
-  undo(req: UndoRequest, kind?: ContentKind): Promise<UndoResponse>
-  state(req: StateRequest, kind?: ContentKind): Promise<StateResponse>
-  mailbox(req: MailboxRequest, kind?: ContentKind): Promise<MailboxResponse>
-  updateSettings(req: UpdateSettingsRequest, kind?: ContentKind): Promise<UpdateSettingsResponse>
-  interrupt(req: InterruptRequest, kind?: ContentKind): Promise<InterruptResponse>
-  compact(req: CompactRequest, kind?: ContentKind): Promise<CompactResponse>
-  listProviders(req: ListProvidersRequest, kind?: ContentKind): Promise<ListProvidersResponse>
-  listProvidersCatalog(req: ListProvidersCatalogRequest, kind?: ContentKind): Promise<ListProvidersCatalogResponse>
-  registerProvider(req: RegisterProviderRequest, kind?: ContentKind): Promise<RegisterProviderResponse>
-  deleteProvider(req: DeleteProviderRequest, kind?: ContentKind): Promise<DeleteProviderResponse>
-  testProvider(req: TestProviderRequest, kind?: ContentKind): Promise<TestProviderResponse>
-  listModels(req: ListModelsRequest, kind?: ContentKind): Promise<ListModelsResponse>
-  listPresets(req: ListPresetsRequest, kind?: ContentKind): Promise<ListPresetsResponse>
-  upsertPreset(req: UpsertPresetRequest, kind?: ContentKind): Promise<UpsertPresetResponse>
-  deletePreset(req: DeletePresetRequest, kind?: ContentKind): Promise<DeletePresetResponse>
-  previewPreset(req: PreviewPresetRequest, kind?: ContentKind): Promise<PreviewPresetResponse>
-  getConfig(req: GetConfigRequest, kind?: ContentKind): Promise<GetConfigResponse>
-  setConfig(req: SetConfigRequest, kind?: ContentKind): Promise<SetConfigResponse>
-  listTools(req: ListToolsRequest, kind?: ContentKind): Promise<ListToolsResponse>
-  getToolConfig(req: GetToolConfigRequest, kind?: ContentKind): Promise<GetToolConfigResponse>
-  setToolConfig(req: SetToolConfigRequest, kind?: ContentKind): Promise<SetToolConfigResponse>
-  setExtensionConfig(req: SetExtensionConfigRequest, kind?: ContentKind): Promise<SetExtensionConfigResponse>
-  uploadFile(req: UploadFileRequest, kind?: ContentKind): Promise<UploadFileResponse>
-  ingestFile(req: IngestFileRequest, kind?: ContentKind): Promise<IngestFileResponse>
-  getFile(req: GetFileRequest, kind?: ContentKind): Promise<GetFileResponse>
-  getFileMeta(req: GetFileMetaRequest, kind?: ContentKind): Promise<GetFileMetaResponse>
-  getAgentConfig(req: GetAgentConfigRequest, kind?: ContentKind): Promise<GetAgentConfigResponse>
+  health(req: MessageInitShape<typeof HealthRequestSchema>, kind?: ContentKind): Promise<HealthResponse>
+  listSessions(req: MessageInitShape<typeof ListSessionsRequestSchema>, kind?: ContentKind): Promise<ListSessionsResponse>
+  createSession(req: MessageInitShape<typeof CreateSessionRequestSchema>, kind?: ContentKind): Promise<CreateSessionResponse>
+  getSession(req: MessageInitShape<typeof GetSessionRequestSchema>, kind?: ContentKind): Promise<GetSessionResponse>
+  deleteSession(req: MessageInitShape<typeof DeleteSessionRequestSchema>, kind?: ContentKind): Promise<DeleteSessionResponse>
+  listMessages(req: MessageInitShape<typeof ListMessagesRequestSchema>, kind?: ContentKind): Promise<ListMessagesResponse>
+  prompt(req: MessageInitShape<typeof PromptRequestSchema>, kind?: ContentKind): Promise<AsyncIterable<PromptResponse>>
+  watchSession(req: MessageInitShape<typeof WatchSessionRequestSchema>, kind?: ContentKind): Promise<AsyncIterable<WatchSessionResponse>>
+  watchSessions(req: MessageInitShape<typeof WatchSessionsRequestSchema>, kind?: ContentKind): Promise<AsyncIterable<WatchSessionsResponse>>
+  fork(req: MessageInitShape<typeof ForkRequestSchema>, kind?: ContentKind): Promise<ForkResponse>
+  rename(req: MessageInitShape<typeof RenameRequestSchema>, kind?: ContentKind): Promise<RenameResponse>
+  setModel(req: MessageInitShape<typeof SetModelRequestSchema>, kind?: ContentKind): Promise<SetModelResponse>
+  undo(req: MessageInitShape<typeof UndoRequestSchema>, kind?: ContentKind): Promise<UndoResponse>
+  state(req: MessageInitShape<typeof StateRequestSchema>, kind?: ContentKind): Promise<StateResponse>
+  mailbox(req: MessageInitShape<typeof MailboxRequestSchema>, kind?: ContentKind): Promise<MailboxResponse>
+  updateSettings(req: MessageInitShape<typeof UpdateSettingsRequestSchema>, kind?: ContentKind): Promise<UpdateSettingsResponse>
+  interrupt(req: MessageInitShape<typeof InterruptRequestSchema>, kind?: ContentKind): Promise<InterruptResponse>
+  compact(req: MessageInitShape<typeof CompactRequestSchema>, kind?: ContentKind): Promise<CompactResponse>
+  listProviders(req: MessageInitShape<typeof ListProvidersRequestSchema>, kind?: ContentKind): Promise<ListProvidersResponse>
+  listProvidersCatalog(req: MessageInitShape<typeof ListProvidersCatalogRequestSchema>, kind?: ContentKind): Promise<ListProvidersCatalogResponse>
+  registerProvider(req: MessageInitShape<typeof RegisterProviderRequestSchema>, kind?: ContentKind): Promise<RegisterProviderResponse>
+  deleteProvider(req: MessageInitShape<typeof DeleteProviderRequestSchema>, kind?: ContentKind): Promise<DeleteProviderResponse>
+  testProvider(req: MessageInitShape<typeof TestProviderRequestSchema>, kind?: ContentKind): Promise<TestProviderResponse>
+  listModels(req: MessageInitShape<typeof ListModelsRequestSchema>, kind?: ContentKind): Promise<ListModelsResponse>
+  listPresets(req: MessageInitShape<typeof ListPresetsRequestSchema>, kind?: ContentKind): Promise<ListPresetsResponse>
+  upsertPreset(req: MessageInitShape<typeof UpsertPresetRequestSchema>, kind?: ContentKind): Promise<UpsertPresetResponse>
+  deletePreset(req: MessageInitShape<typeof DeletePresetRequestSchema>, kind?: ContentKind): Promise<DeletePresetResponse>
+  previewPreset(req: MessageInitShape<typeof PreviewPresetRequestSchema>, kind?: ContentKind): Promise<PreviewPresetResponse>
+  getConfig(req: MessageInitShape<typeof GetConfigRequestSchema>, kind?: ContentKind): Promise<GetConfigResponse>
+  setConfig(req: MessageInitShape<typeof SetConfigRequestSchema>, kind?: ContentKind): Promise<SetConfigResponse>
+  listTools(req: MessageInitShape<typeof ListToolsRequestSchema>, kind?: ContentKind): Promise<ListToolsResponse>
+  getToolConfig(req: MessageInitShape<typeof GetToolConfigRequestSchema>, kind?: ContentKind): Promise<GetToolConfigResponse>
+  setToolConfig(req: MessageInitShape<typeof SetToolConfigRequestSchema>, kind?: ContentKind): Promise<SetToolConfigResponse>
+  setExtensionConfig(req: MessageInitShape<typeof SetExtensionConfigRequestSchema>, kind?: ContentKind): Promise<SetExtensionConfigResponse>
+  uploadFile(req: MessageInitShape<typeof UploadFileRequestSchema>, kind?: ContentKind): Promise<UploadFileResponse>
+  ingestFile(req: MessageInitShape<typeof IngestFileRequestSchema>, kind?: ContentKind): Promise<IngestFileResponse>
+  getFile(req: MessageInitShape<typeof GetFileRequestSchema>, kind?: ContentKind): Promise<GetFileResponse>
+  getFileMeta(req: MessageInitShape<typeof GetFileMetaRequestSchema>, kind?: ContentKind): Promise<GetFileMetaResponse>
+  getAgentConfig(req: MessageInitShape<typeof GetAgentConfigRequestSchema>, kind?: ContentKind): Promise<GetAgentConfigResponse>
 }
 export function createAgentServiceClient(transport: Transport, defaultKind: ContentKind = 'proto'): AgentServiceClient {
   return {
-    async health(req, kind = defaultKind) {
+    async health(reqInit, kind = defaultKind) {
+      const req = create(HealthRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Health"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -108,7 +109,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(HealthResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(HealthResponseSchema, res.body)
     },
-    async listSessions(req, kind = defaultKind) {
+    async listSessions(reqInit, kind = defaultKind) {
+      const req = create(ListSessionsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListSessions"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -117,7 +119,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListSessionsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListSessionsResponseSchema, res.body)
     },
-    async createSession(req, kind = defaultKind) {
+    async createSession(reqInit, kind = defaultKind) {
+      const req = create(CreateSessionRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/CreateSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -126,7 +129,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(CreateSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateSessionResponseSchema, res.body)
     },
-    async getSession(req, kind = defaultKind) {
+    async getSession(reqInit, kind = defaultKind) {
+      const req = create(GetSessionRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -135,7 +139,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(GetSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetSessionResponseSchema, res.body)
     },
-    async deleteSession(req, kind = defaultKind) {
+    async deleteSession(reqInit, kind = defaultKind) {
+      const req = create(DeleteSessionRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/DeleteSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -144,7 +149,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteSessionResponseSchema, res.body)
     },
-    async listMessages(req, kind = defaultKind) {
+    async listMessages(reqInit, kind = defaultKind) {
+      const req = create(ListMessagesRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListMessages"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -153,7 +159,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListMessagesResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListMessagesResponseSchema, res.body)
     },
-    async prompt(req, kind = defaultKind) {
+    async prompt(reqInit, kind = defaultKind) {
+      const req = create(PromptRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Prompt"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
@@ -161,7 +168,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(PromptRequestSchema, req)) : toBinary(PromptRequestSchema, req) })
       return (async function* (): AsyncIterable<PromptResponse> { for await (const chunk of stream) { yield isJson ? fromJson(PromptResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PromptResponseSchema, chunk) } })()
     },
-    async watchSession(req, kind = defaultKind) {
+    async watchSession(reqInit, kind = defaultKind) {
+      const req = create(WatchSessionRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/WatchSession"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
@@ -169,7 +177,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionRequestSchema, req)) : toBinary(WatchSessionRequestSchema, req) })
       return (async function* (): AsyncIterable<WatchSessionResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionResponseSchema, chunk) } })()
     },
-    async watchSessions(req, kind = defaultKind) {
+    async watchSessions(reqInit, kind = defaultKind) {
+      const req = create(WatchSessionsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/WatchSessions"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
@@ -177,7 +186,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionsRequestSchema, req)) : toBinary(WatchSessionsRequestSchema, req) })
       return (async function* (): AsyncIterable<WatchSessionsResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionsResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionsResponseSchema, chunk) } })()
     },
-    async fork(req, kind = defaultKind) {
+    async fork(reqInit, kind = defaultKind) {
+      const req = create(ForkRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Fork"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -186,7 +196,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ForkResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ForkResponseSchema, res.body)
     },
-    async rename(req, kind = defaultKind) {
+    async rename(reqInit, kind = defaultKind) {
+      const req = create(RenameRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Rename"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -195,7 +206,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(RenameResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RenameResponseSchema, res.body)
     },
-    async setModel(req, kind = defaultKind) {
+    async setModel(reqInit, kind = defaultKind) {
+      const req = create(SetModelRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/SetModel"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -204,7 +216,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(SetModelResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetModelResponseSchema, res.body)
     },
-    async undo(req, kind = defaultKind) {
+    async undo(reqInit, kind = defaultKind) {
+      const req = create(UndoRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Undo"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -213,7 +226,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(UndoResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UndoResponseSchema, res.body)
     },
-    async state(req, kind = defaultKind) {
+    async state(reqInit, kind = defaultKind) {
+      const req = create(StateRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/State"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -222,7 +236,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(StateResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(StateResponseSchema, res.body)
     },
-    async mailbox(req, kind = defaultKind) {
+    async mailbox(reqInit, kind = defaultKind) {
+      const req = create(MailboxRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Mailbox"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -231,7 +246,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(MailboxResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(MailboxResponseSchema, res.body)
     },
-    async updateSettings(req, kind = defaultKind) {
+    async updateSettings(reqInit, kind = defaultKind) {
+      const req = create(UpdateSettingsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/UpdateSettings"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -240,7 +256,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateSettingsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateSettingsResponseSchema, res.body)
     },
-    async interrupt(req, kind = defaultKind) {
+    async interrupt(reqInit, kind = defaultKind) {
+      const req = create(InterruptRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Interrupt"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -249,7 +266,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(InterruptResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(InterruptResponseSchema, res.body)
     },
-    async compact(req, kind = defaultKind) {
+    async compact(reqInit, kind = defaultKind) {
+      const req = create(CompactRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/Compact"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -258,7 +276,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(CompactResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CompactResponseSchema, res.body)
     },
-    async listProviders(req, kind = defaultKind) {
+    async listProviders(reqInit, kind = defaultKind) {
+      const req = create(ListProvidersRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListProviders"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -267,7 +286,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersResponseSchema, res.body)
     },
-    async listProvidersCatalog(req, kind = defaultKind) {
+    async listProvidersCatalog(reqInit, kind = defaultKind) {
+      const req = create(ListProvidersCatalogRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListProvidersCatalog"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -276,7 +296,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersCatalogResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersCatalogResponseSchema, res.body)
     },
-    async registerProvider(req, kind = defaultKind) {
+    async registerProvider(reqInit, kind = defaultKind) {
+      const req = create(RegisterProviderRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/RegisterProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -285,7 +306,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(RegisterProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RegisterProviderResponseSchema, res.body)
     },
-    async deleteProvider(req, kind = defaultKind) {
+    async deleteProvider(reqInit, kind = defaultKind) {
+      const req = create(DeleteProviderRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/DeleteProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -294,7 +316,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteProviderResponseSchema, res.body)
     },
-    async testProvider(req, kind = defaultKind) {
+    async testProvider(reqInit, kind = defaultKind) {
+      const req = create(TestProviderRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/TestProvider"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -303,7 +326,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(TestProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(TestProviderResponseSchema, res.body)
     },
-    async listModels(req, kind = defaultKind) {
+    async listModels(reqInit, kind = defaultKind) {
+      const req = create(ListModelsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListModels"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -312,7 +336,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListModelsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListModelsResponseSchema, res.body)
     },
-    async listPresets(req, kind = defaultKind) {
+    async listPresets(reqInit, kind = defaultKind) {
+      const req = create(ListPresetsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListPresets"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -321,7 +346,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListPresetsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListPresetsResponseSchema, res.body)
     },
-    async upsertPreset(req, kind = defaultKind) {
+    async upsertPreset(reqInit, kind = defaultKind) {
+      const req = create(UpsertPresetRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/UpsertPreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -330,7 +356,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(UpsertPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpsertPresetResponseSchema, res.body)
     },
-    async deletePreset(req, kind = defaultKind) {
+    async deletePreset(reqInit, kind = defaultKind) {
+      const req = create(DeletePresetRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/DeletePreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -339,7 +366,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(DeletePresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeletePresetResponseSchema, res.body)
     },
-    async previewPreset(req, kind = defaultKind) {
+    async previewPreset(reqInit, kind = defaultKind) {
+      const req = create(PreviewPresetRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/PreviewPreset"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -348,7 +376,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(PreviewPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PreviewPresetResponseSchema, res.body)
     },
-    async getConfig(req, kind = defaultKind) {
+    async getConfig(reqInit, kind = defaultKind) {
+      const req = create(GetConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -357,7 +386,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(GetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetConfigResponseSchema, res.body)
     },
-    async setConfig(req, kind = defaultKind) {
+    async setConfig(reqInit, kind = defaultKind) {
+      const req = create(SetConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/SetConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -366,7 +396,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(SetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetConfigResponseSchema, res.body)
     },
-    async listTools(req, kind = defaultKind) {
+    async listTools(reqInit, kind = defaultKind) {
+      const req = create(ListToolsRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/ListTools"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -375,7 +406,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListToolsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListToolsResponseSchema, res.body)
     },
-    async getToolConfig(req, kind = defaultKind) {
+    async getToolConfig(reqInit, kind = defaultKind) {
+      const req = create(GetToolConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetToolConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -384,7 +416,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(GetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetToolConfigResponseSchema, res.body)
     },
-    async setToolConfig(req, kind = defaultKind) {
+    async setToolConfig(reqInit, kind = defaultKind) {
+      const req = create(SetToolConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/SetToolConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -393,7 +426,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(SetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetToolConfigResponseSchema, res.body)
     },
-    async setExtensionConfig(req, kind = defaultKind) {
+    async setExtensionConfig(reqInit, kind = defaultKind) {
+      const req = create(SetExtensionConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/SetExtensionConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -402,7 +436,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(SetExtensionConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetExtensionConfigResponseSchema, res.body)
     },
-    async uploadFile(req, kind = defaultKind) {
+    async uploadFile(reqInit, kind = defaultKind) {
+      const req = create(UploadFileRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/UploadFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -411,7 +446,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(UploadFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UploadFileResponseSchema, res.body)
     },
-    async ingestFile(req, kind = defaultKind) {
+    async ingestFile(reqInit, kind = defaultKind) {
+      const req = create(IngestFileRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/IngestFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -420,7 +456,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(IngestFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IngestFileResponseSchema, res.body)
     },
-    async getFile(req, kind = defaultKind) {
+    async getFile(reqInit, kind = defaultKind) {
+      const req = create(GetFileRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetFile"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -429,7 +466,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileResponseSchema, res.body)
     },
-    async getFileMeta(req, kind = defaultKind) {
+    async getFileMeta(reqInit, kind = defaultKind) {
+      const req = create(GetFileMetaRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetFileMeta"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -438,7 +476,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileMetaResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileMetaResponseSchema, res.body)
     },
-    async getAgentConfig(req, kind = defaultKind) {
+    async getAgentConfig(reqInit, kind = defaultKind) {
+      const req = create(GetAgentConfigRequestSchema, reqInit)
       const url = "/agent.v1.AgentService/GetAgentConfig"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -694,18 +733,19 @@ export function AgentServiceHandlers(impl: AgentServiceServiceImpl): ServiceHand
 }
 
 export interface AdminServiceClient {
-  listTenants(req: ListTenantsRequest, kind?: ContentKind): Promise<ListTenantsResponse>
-  createTenant(req: CreateTenantRequest, kind?: ContentKind): Promise<CreateTenantResponse>
-  updateTenant(req: UpdateTenantRequest, kind?: ContentKind): Promise<UpdateTenantResponse>
-  deleteTenant(req: DeleteTenantRequest, kind?: ContentKind): Promise<DeleteTenantResponse>
-  issueTenantToken(req: IssueTenantTokenRequest, kind?: ContentKind): Promise<IssueTenantTokenResponse>
-  listTenantTokens(req: ListTenantTokensRequest, kind?: ContentKind): Promise<ListTenantTokensResponse>
-  revokeTenantToken(req: RevokeTenantTokenRequest, kind?: ContentKind): Promise<RevokeTenantTokenResponse>
-  rotateTenantToken(req: RotateTenantTokenRequest, kind?: ContentKind): Promise<RotateTenantTokenResponse>
+  listTenants(req: MessageInitShape<typeof ListTenantsRequestSchema>, kind?: ContentKind): Promise<ListTenantsResponse>
+  createTenant(req: MessageInitShape<typeof CreateTenantRequestSchema>, kind?: ContentKind): Promise<CreateTenantResponse>
+  updateTenant(req: MessageInitShape<typeof UpdateTenantRequestSchema>, kind?: ContentKind): Promise<UpdateTenantResponse>
+  deleteTenant(req: MessageInitShape<typeof DeleteTenantRequestSchema>, kind?: ContentKind): Promise<DeleteTenantResponse>
+  issueTenantToken(req: MessageInitShape<typeof IssueTenantTokenRequestSchema>, kind?: ContentKind): Promise<IssueTenantTokenResponse>
+  listTenantTokens(req: MessageInitShape<typeof ListTenantTokensRequestSchema>, kind?: ContentKind): Promise<ListTenantTokensResponse>
+  revokeTenantToken(req: MessageInitShape<typeof RevokeTenantTokenRequestSchema>, kind?: ContentKind): Promise<RevokeTenantTokenResponse>
+  rotateTenantToken(req: MessageInitShape<typeof RotateTenantTokenRequestSchema>, kind?: ContentKind): Promise<RotateTenantTokenResponse>
 }
 export function createAdminServiceClient(transport: Transport, defaultKind: ContentKind = 'proto'): AdminServiceClient {
   return {
-    async listTenants(req, kind = defaultKind) {
+    async listTenants(reqInit, kind = defaultKind) {
+      const req = create(ListTenantsRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/ListTenants"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -714,7 +754,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantsResponseSchema, res.body)
     },
-    async createTenant(req, kind = defaultKind) {
+    async createTenant(reqInit, kind = defaultKind) {
+      const req = create(CreateTenantRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/CreateTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -723,7 +764,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(CreateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateTenantResponseSchema, res.body)
     },
-    async updateTenant(req, kind = defaultKind) {
+    async updateTenant(reqInit, kind = defaultKind) {
+      const req = create(UpdateTenantRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/UpdateTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -732,7 +774,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateTenantResponseSchema, res.body)
     },
-    async deleteTenant(req, kind = defaultKind) {
+    async deleteTenant(reqInit, kind = defaultKind) {
+      const req = create(DeleteTenantRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/DeleteTenant"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -741,7 +784,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteTenantResponseSchema, res.body)
     },
-    async issueTenantToken(req, kind = defaultKind) {
+    async issueTenantToken(reqInit, kind = defaultKind) {
+      const req = create(IssueTenantTokenRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/IssueTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -750,7 +794,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(IssueTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IssueTenantTokenResponseSchema, res.body)
     },
-    async listTenantTokens(req, kind = defaultKind) {
+    async listTenantTokens(reqInit, kind = defaultKind) {
+      const req = create(ListTenantTokensRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/ListTenantTokens"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -759,7 +804,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantTokensResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantTokensResponseSchema, res.body)
     },
-    async revokeTenantToken(req, kind = defaultKind) {
+    async revokeTenantToken(reqInit, kind = defaultKind) {
+      const req = create(RevokeTenantTokenRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/RevokeTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
@@ -768,7 +814,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       if (res.error) throw res.error
       return isJson ? fromJson(RevokeTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RevokeTenantTokenResponseSchema, res.body)
     },
-    async rotateTenantToken(req, kind = defaultKind) {
+    async rotateTenantToken(reqInit, kind = defaultKind) {
+      const req = create(RotateTenantTokenRequestSchema, reqInit)
       const url = "/agent.v1.AdminService/RotateTenantToken"
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
