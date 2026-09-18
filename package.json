@@ -1,6 +1,6 @@
 {
   "name": "@easy-utils/agent-sdk-typescript",
-  "version": "0.16.9",
+  "version": "0.17.0",
   "type": "module",
   "main": "./src/index.ts",
   "types": "./src/index.ts",
@@ -9,7 +9,7 @@
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.14.1",
-    "@easy-utils/easy-rpc": "github:easy-utils/easy-rpc-ts#v0.5.8"
+    "@easy-utils/easy-rpc": "github:easy-utils/easy-rpc-ts#v2.0.0"
   },
   "devDependencies": {
     "typescript": "^5.9.3",
