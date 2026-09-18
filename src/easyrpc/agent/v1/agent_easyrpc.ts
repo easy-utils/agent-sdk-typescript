@@ -110,7 +110,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(HealthRequestSchema, req)) : toBinary(HealthRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(HealthRequestSchema, req)) : toBinary(HealthRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(HealthResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(HealthResponseSchema, res.body)
     },
@@ -122,7 +123,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListSessionsRequestSchema, req)) : toBinary(ListSessionsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListSessionsRequestSchema, req)) : toBinary(ListSessionsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListSessionsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListSessionsResponseSchema, res.body)
     },
@@ -134,7 +136,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateSessionRequestSchema, req)) : toBinary(CreateSessionRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateSessionRequestSchema, req)) : toBinary(CreateSessionRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(CreateSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateSessionResponseSchema, res.body)
     },
@@ -146,7 +149,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetSessionRequestSchema, req)) : toBinary(GetSessionRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetSessionRequestSchema, req)) : toBinary(GetSessionRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetSessionResponseSchema, res.body)
     },
@@ -158,7 +162,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteSessionRequestSchema, req)) : toBinary(DeleteSessionRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteSessionRequestSchema, req)) : toBinary(DeleteSessionRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteSessionResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteSessionResponseSchema, res.body)
     },
@@ -170,7 +175,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListMessagesRequestSchema, req)) : toBinary(ListMessagesRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListMessagesRequestSchema, req)) : toBinary(ListMessagesRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListMessagesResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListMessagesResponseSchema, res.body)
     },
@@ -182,7 +188,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(PromptRequestSchema, req)) : toBinary(PromptRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(PromptRequestSchema, req)) : toBinary(PromptRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const stream = await transport.openStream({ ...call, method: 'POST' })
       return (async function* (): AsyncIterable<PromptResponse> { for await (const chunk of stream) { yield isJson ? fromJson(PromptResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PromptResponseSchema, chunk) } })()
     },
     async watchSession(reqInit, options = defaultKind) {
@@ -193,7 +200,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionRequestSchema, req)) : toBinary(WatchSessionRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(WatchSessionRequestSchema, req)) : toBinary(WatchSessionRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const stream = await transport.openStream({ ...call, method: 'POST' })
       return (async function* (): AsyncIterable<WatchSessionResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionResponseSchema, chunk) } })()
     },
     async watchSessions(reqInit, options = defaultKind) {
@@ -204,7 +212,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/connect+json' : 'application/connect+proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const stream = await transport.openStream({ url, method: 'POST', headers: md, body: isJson ? toBytes(toJson(WatchSessionsRequestSchema, req)) : toBinary(WatchSessionsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(WatchSessionsRequestSchema, req)) : toBinary(WatchSessionsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const stream = await transport.openStream({ ...call, method: 'POST' })
       return (async function* (): AsyncIterable<WatchSessionsResponse> { for await (const chunk of stream) { yield isJson ? fromJson(WatchSessionsResponseSchema, fromBytesToJson(chunk) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(WatchSessionsResponseSchema, chunk) } })()
     },
     async fork(reqInit, options = defaultKind) {
@@ -215,7 +224,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ForkRequestSchema, req)) : toBinary(ForkRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ForkRequestSchema, req)) : toBinary(ForkRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ForkResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ForkResponseSchema, res.body)
     },
@@ -227,7 +237,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RenameRequestSchema, req)) : toBinary(RenameRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RenameRequestSchema, req)) : toBinary(RenameRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(RenameResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RenameResponseSchema, res.body)
     },
@@ -239,7 +250,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetModelRequestSchema, req)) : toBinary(SetModelRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetModelRequestSchema, req)) : toBinary(SetModelRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(SetModelResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetModelResponseSchema, res.body)
     },
@@ -251,7 +263,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UndoRequestSchema, req)) : toBinary(UndoRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UndoRequestSchema, req)) : toBinary(UndoRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(UndoResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UndoResponseSchema, res.body)
     },
@@ -263,7 +276,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(StateRequestSchema, req)) : toBinary(StateRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(StateRequestSchema, req)) : toBinary(StateRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(StateResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(StateResponseSchema, res.body)
     },
@@ -275,7 +289,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(MailboxRequestSchema, req)) : toBinary(MailboxRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(MailboxRequestSchema, req)) : toBinary(MailboxRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(MailboxResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(MailboxResponseSchema, res.body)
     },
@@ -287,7 +302,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateSettingsRequestSchema, req)) : toBinary(UpdateSettingsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateSettingsRequestSchema, req)) : toBinary(UpdateSettingsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateSettingsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateSettingsResponseSchema, res.body)
     },
@@ -299,7 +315,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(InterruptRequestSchema, req)) : toBinary(InterruptRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(InterruptRequestSchema, req)) : toBinary(InterruptRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(InterruptResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(InterruptResponseSchema, res.body)
     },
@@ -311,7 +328,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CompactRequestSchema, req)) : toBinary(CompactRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CompactRequestSchema, req)) : toBinary(CompactRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(CompactResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CompactResponseSchema, res.body)
     },
@@ -323,7 +341,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersRequestSchema, req)) : toBinary(ListProvidersRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersRequestSchema, req)) : toBinary(ListProvidersRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersResponseSchema, res.body)
     },
@@ -335,7 +354,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersCatalogRequestSchema, req)) : toBinary(ListProvidersCatalogRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListProvidersCatalogRequestSchema, req)) : toBinary(ListProvidersCatalogRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListProvidersCatalogResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListProvidersCatalogResponseSchema, res.body)
     },
@@ -347,7 +367,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RegisterProviderRequestSchema, req)) : toBinary(RegisterProviderRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RegisterProviderRequestSchema, req)) : toBinary(RegisterProviderRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(RegisterProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RegisterProviderResponseSchema, res.body)
     },
@@ -359,7 +380,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteProviderRequestSchema, req)) : toBinary(DeleteProviderRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteProviderRequestSchema, req)) : toBinary(DeleteProviderRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteProviderResponseSchema, res.body)
     },
@@ -371,7 +393,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(TestProviderRequestSchema, req)) : toBinary(TestProviderRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(TestProviderRequestSchema, req)) : toBinary(TestProviderRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(TestProviderResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(TestProviderResponseSchema, res.body)
     },
@@ -383,7 +406,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListModelsRequestSchema, req)) : toBinary(ListModelsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListModelsRequestSchema, req)) : toBinary(ListModelsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListModelsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListModelsResponseSchema, res.body)
     },
@@ -395,7 +419,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListPresetsRequestSchema, req)) : toBinary(ListPresetsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListPresetsRequestSchema, req)) : toBinary(ListPresetsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListPresetsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListPresetsResponseSchema, res.body)
     },
@@ -407,7 +432,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpsertPresetRequestSchema, req)) : toBinary(UpsertPresetRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpsertPresetRequestSchema, req)) : toBinary(UpsertPresetRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(UpsertPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpsertPresetResponseSchema, res.body)
     },
@@ -419,7 +445,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeletePresetRequestSchema, req)) : toBinary(DeletePresetRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeletePresetRequestSchema, req)) : toBinary(DeletePresetRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(DeletePresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeletePresetResponseSchema, res.body)
     },
@@ -431,7 +458,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(PreviewPresetRequestSchema, req)) : toBinary(PreviewPresetRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(PreviewPresetRequestSchema, req)) : toBinary(PreviewPresetRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(PreviewPresetResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(PreviewPresetResponseSchema, res.body)
     },
@@ -443,7 +471,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetConfigRequestSchema, req)) : toBinary(GetConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetConfigRequestSchema, req)) : toBinary(GetConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetConfigResponseSchema, res.body)
     },
@@ -455,7 +484,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetConfigRequestSchema, req)) : toBinary(SetConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetConfigRequestSchema, req)) : toBinary(SetConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(SetConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetConfigResponseSchema, res.body)
     },
@@ -467,7 +497,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListToolsRequestSchema, req)) : toBinary(ListToolsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListToolsRequestSchema, req)) : toBinary(ListToolsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListToolsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListToolsResponseSchema, res.body)
     },
@@ -479,7 +510,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetToolConfigRequestSchema, req)) : toBinary(GetToolConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetToolConfigRequestSchema, req)) : toBinary(GetToolConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetToolConfigResponseSchema, res.body)
     },
@@ -491,7 +523,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetToolConfigRequestSchema, req)) : toBinary(SetToolConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetToolConfigRequestSchema, req)) : toBinary(SetToolConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(SetToolConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetToolConfigResponseSchema, res.body)
     },
@@ -503,7 +536,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetExtensionConfigRequestSchema, req)) : toBinary(SetExtensionConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(SetExtensionConfigRequestSchema, req)) : toBinary(SetExtensionConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(SetExtensionConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(SetExtensionConfigResponseSchema, res.body)
     },
@@ -515,7 +549,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UploadFileRequestSchema, req)) : toBinary(UploadFileRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UploadFileRequestSchema, req)) : toBinary(UploadFileRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(UploadFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UploadFileResponseSchema, res.body)
     },
@@ -527,7 +562,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IngestFileRequestSchema, req)) : toBinary(IngestFileRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IngestFileRequestSchema, req)) : toBinary(IngestFileRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(IngestFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IngestFileResponseSchema, res.body)
     },
@@ -539,7 +575,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileRequestSchema, req)) : toBinary(GetFileRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileRequestSchema, req)) : toBinary(GetFileRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileResponseSchema, res.body)
     },
@@ -551,7 +588,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileMetaRequestSchema, req)) : toBinary(GetFileMetaRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetFileMetaRequestSchema, req)) : toBinary(GetFileMetaRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetFileMetaResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetFileMetaResponseSchema, res.body)
     },
@@ -563,7 +601,8 @@ export function createAgentServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetAgentConfigRequestSchema, req)) : toBinary(GetAgentConfigRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(GetAgentConfigRequestSchema, req)) : toBinary(GetAgentConfigRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(GetAgentConfigResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(GetAgentConfigResponseSchema, res.body)
     },
@@ -833,7 +872,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantsRequestSchema, req)) : toBinary(ListTenantsRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantsRequestSchema, req)) : toBinary(ListTenantsRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantsResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantsResponseSchema, res.body)
     },
@@ -845,7 +885,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateTenantRequestSchema, req)) : toBinary(CreateTenantRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(CreateTenantRequestSchema, req)) : toBinary(CreateTenantRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(CreateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(CreateTenantResponseSchema, res.body)
     },
@@ -857,7 +898,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateTenantRequestSchema, req)) : toBinary(UpdateTenantRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(UpdateTenantRequestSchema, req)) : toBinary(UpdateTenantRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(UpdateTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(UpdateTenantResponseSchema, res.body)
     },
@@ -869,7 +911,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteTenantRequestSchema, req)) : toBinary(DeleteTenantRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(DeleteTenantRequestSchema, req)) : toBinary(DeleteTenantRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(DeleteTenantResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(DeleteTenantResponseSchema, res.body)
     },
@@ -881,7 +924,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IssueTenantTokenRequestSchema, req)) : toBinary(IssueTenantTokenRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(IssueTenantTokenRequestSchema, req)) : toBinary(IssueTenantTokenRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(IssueTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(IssueTenantTokenResponseSchema, res.body)
     },
@@ -893,7 +937,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantTokensRequestSchema, req)) : toBinary(ListTenantTokensRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(ListTenantTokensRequestSchema, req)) : toBinary(ListTenantTokensRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(ListTenantTokensResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(ListTenantTokensResponseSchema, res.body)
     },
@@ -905,7 +950,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RevokeTenantTokenRequestSchema, req)) : toBinary(RevokeTenantTokenRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RevokeTenantTokenRequestSchema, req)) : toBinary(RevokeTenantTokenRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(RevokeTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RevokeTenantTokenResponseSchema, res.body)
     },
@@ -917,7 +963,8 @@ export function createAdminServiceClient(transport: Transport, defaultKind: Cont
       const isJson = kind === 'json'
       const ct = isJson ? 'application/json' : 'application/proto'
       const md = { 'content-type': [ct], accept: [ct], ...(opts.metadata ?? {}) }
-      const res = await transport.send({ url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RotateTenantTokenRequestSchema, req)) : toBinary(RotateTenantTokenRequestSchema, req), signal: opts.signal })
+      const call = { url, method: "POST", headers: md, body: isJson ? toBytes(toJson(RotateTenantTokenRequestSchema, req)) : toBinary(RotateTenantTokenRequestSchema, req), ...(opts.signal !== undefined ? { signal: opts.signal } : {}) }
+      const res = await transport.send(call)
       if (res.error) throw res.error
       return isJson ? fromJson(RotateTenantTokenResponseSchema, fromBytesToJson(res.body) as unknown as import('@bufbuild/protobuf').JsonValue) : fromBinary(RotateTenantTokenResponseSchema, res.body)
     },
